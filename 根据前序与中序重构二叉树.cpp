@@ -5,16 +5,16 @@
 using namespace std;
 
 typedef char TElemType;
-//¶ş²æÊ÷µÄ¶ş²æÁ´±í´æ´¢±íÊ¾
+//äºŒå‰æ ‘çš„äºŒå‰é“¾è¡¨å­˜å‚¨è¡¨ç¤º
 typedef struct BiTNode {
-   TElemType data;                      //½áµãÊı¾İÓò
-   struct BiTNode *lchild, *rchild; //×óÓÒº¢×ÓÖ¸Õë
+   TElemType data;                      //ç»“ç‚¹æ•°æ®åŸŸ
+   struct BiTNode *lchild, *rchild; //å·¦å³å­©å­æŒ‡é’ˆ
 } BiTNode, *BiTree;
 
-//¸ù¾İÏÈĞòĞòÁĞpre[pre_low..pre_low+len-1]ºÍÖĞĞòĞòÁĞin[in_low..in_low+len-1]½¨Ê÷t
+//æ ¹æ®å…ˆåºåºåˆ—pre[pre_low..pre_low+len-1]å’Œä¸­åºåºåˆ—in[in_low..in_low+len-1]å»ºæ ‘t
 void BuildTree(BiTree& t, char pre[], int pre_low, char in[], int in_low, int len)
 {
-    /****ÔÚ´ËÏÂÃæÍê³É´úÂë************/
+    /****åœ¨æ­¤ä¸‹é¢å®Œæˆä»£ç ************/
     if(len==0)t=NULL;
 	if(len!=0)
 	{
@@ -33,10 +33,10 @@ void BuildTree(BiTree& t, char pre[], int pre_low, char in[], int in_low, int le
 
    /*********************************/
 }
-// ºóĞò±éÀúµÄµİ¹éËã·¨
+// ååºéå†çš„é€’å½’ç®—æ³•
 void PostOrderTraverse(BiTree t)
 {
-   /****ÔÚ´ËÏÂÃæÍê³É´úÂë************/
+   /****åœ¨æ­¤ä¸‹é¢å®Œæˆä»£ç ************/
 	if(t)
 	{
 		PostOrderTraverse(t->lchild);
@@ -50,7 +50,7 @@ void PostOrderTraverse(BiTree t)
 
 void DestroyBitree(BiTree& t)
 {
-   /****ÔÚ´ËÏÂÃæÍê³É´úÂë************/
+   /****åœ¨æ­¤ä¸‹é¢å®Œæˆä»£ç ************/
 	delete t;
 
    /*********************************/
